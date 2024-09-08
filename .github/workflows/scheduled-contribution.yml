@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check out GitHub main branch
         uses: actions/checkout@v4
-	run: |
+      - run: |
           echo ${{ github.workspace }}
           echo $GITHUB_WORKSPACE      
       - name: Set up Python
