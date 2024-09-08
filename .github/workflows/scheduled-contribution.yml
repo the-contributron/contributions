@@ -8,7 +8,6 @@ jobs:
   Test-Job:
     name: "Print to text file"
     runs-on: ubuntu-latest
-    defaults:
     steps:
       - name: Check out GitHub main branch
         uses: actions/checkout@v4
