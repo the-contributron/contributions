@@ -2,7 +2,7 @@ name: Scheduled Contribution
 
 on:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '0 */4 * * *'
 
 jobs:
   Contribute:
@@ -16,13 +16,19 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: (temp) List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      
       - name: Run Python script
         run: python ${{ github.workspace }}/main.py
-      
+
+      - name: Update README.md file
+        run: echo "Updated on $(date)" > ${{ github.workspace }}/README.md
+
+      - name: Commit change
+        run:
+          git config --local user.name the-contributron
+          git config --local user.email ${{ secrets.EMAIL }}
+          git commit -am "feat: Contribute on $(date)"
+          git push -f origin main
+     
       - name: Upload file as artifact
         uses: actions/upload-artifact@v3
         with:
