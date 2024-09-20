@@ -23,7 +23,7 @@ jobs:
         run: echo "Updated on $(date)" > ${{ github.workspace }}/README.md
 
       - name: Commit change
-        run:
+        run: |
           git config --local user.name the-contributron
           git config --local user.email ${{ secrets.EMAIL }}
           git commit -am "feat: Contribute on $(date)"
