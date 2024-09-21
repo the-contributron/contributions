@@ -24,8 +24,8 @@ jobs:
 
       - name: Commit change
         run: |
-          git config --local user.name the-contributron
-          git config --local user.email ${{ secrets.EMAIL }}
+          git config --local user.name "the-contributron"
+          git config --local user.email "${{ secrets.EMAIL }}"
           git commit -am "feat: Contribute on $(date)"
           git push -f origin main
      
