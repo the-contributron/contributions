@@ -23,11 +23,9 @@ jobs:
         run: echo "Updated on $(date)" > ${{ github.workspace }}/README.md
 
       - name: Commit change
-        run: |
-          git config --local user.name "the-contributron"
-          git config --local user.email "${{ secrets.EMAIL }}"
-          git commit -am "feat: Contribute on $(date)"
-          git push -f origin main
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "feat: Contribute on $(date)"
      
       - name: Upload file as artifact
         uses: actions/upload-artifact@v3
