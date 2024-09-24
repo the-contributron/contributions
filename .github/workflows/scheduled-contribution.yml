@@ -16,11 +16,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run Python script
-        run: python ${{ github.workspace }}/main.py
-
-      - name: Update README.md file
-        run: echo "Updated on $(date)" > ${{ github.workspace }}/README.md
+      - name: Update README.md if it's a contribution day
+        run: python ${{ github.workspace }}/contribute.py
 
       - name: Commit change
         uses: stefanzweifel/git-auto-commit-action@v5
