@@ -47,4 +47,4 @@ contribution_day = (0 < (week - 12) < len(hi_mom)) and hi_mom[week - 12][weekday
 
 if contribution_day:
     with open('README.md', 'a') as readme:
-        readme.write(f'\nContributron contributed on {today}.')
+        readme.write(f'\n* *Contributron* contributed on {today.strftime("%A, %d %B %Y at %I:%M%p")}.')
