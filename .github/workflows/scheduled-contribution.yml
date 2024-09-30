@@ -22,4 +22,4 @@ jobs:
       - name: Commit change
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "feat: Contribute on $(date)"
+          commit_message: "🤖 contribute..."
