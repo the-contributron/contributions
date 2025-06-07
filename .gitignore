@@ -1,0 +1,13 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+
+# macOS specific files
+.DS_Store
+
+# IDE files
+.vscode/
+
+# Unit test cache
+.pytest_cache/
+
